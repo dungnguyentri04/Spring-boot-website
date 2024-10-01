@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{dashboard/basedb::layout(~{::content})}">
+
+<div class="container" th:fragment="content">
+    <div class="page-inner">
+        <div class="page-header">
+            <h3 class="fw-bold mb-3">Forms</h3>
+            <ul class="breadcrumbs mb-3">
+                <li class="nav-home"><a href="#"><i class="icon-home"></i></a></li>
+                <li class="separator"><i class="icon-arrow-right"></i></li>
+                <li class="nav-item"><a href="#">Forms</a></li>
+                <li class="separator"><i class="icon-arrow-right"></i></li>
+                <li class="nav-item"><a href="#">Basic Form</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <form action="/dashboard/saveProduct" method="post" enctype="multipart/form-data">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Form Products</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="productName">Product Name</label>
+                                        <input name="productName" type="text" class="form-control" id="productName" placeholder="Enter Product Name"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="price">Price</label>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text">$</span>
+                                            <input name="price" type="number" step="0.01" class="form-control" id="price" aria-label="Amount (to the nearest dollar)"/>
+                                            <span class="input-group-text">.00</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="discountPrice">Discount Price</label>
+                                        <input name="discountPrice" type="number" class="form-control" id="discountPrice" placeholder="Enter discount Price"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="quantity">Quantity</label>
+                                        <input name="quantity" type="number" class="form-control" id="quantity" placeholder="Enter Quantity"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="productWeight">Product Weight</label>
+                                        <input name="productWeight" type="text" class="form-control" id="productWeight" placeholder="Enter Product Weight"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tags">Tag product</label>
+                                        <input name="" type="text" class="form-control" id="tags" placeholder="Enter Product Tags"/>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="shortDescription">Short Description</label>
+                                        <input name="shortDescription" type="text" class="form-control" id="shortDescription" placeholder="Enter Short Description"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description">Description</label>
+                                        <textarea name="productDescription" class="form-control" id="description" rows="5"></textarea>
+                                    </div>
+<!--                                    <div class="form-group">-->
+<!--                                        <label class="form-label">Product Category</label>-->
+<!--                                        <div class="selectgroup selectgroup-pills">-->
+<!--                                            <label class="selectgroup-item">-->
+<!--                                                <input type="checkbox" name="categories" value="HTML" class="selectgroup-input" checked=""/>-->
+<!--                                                <span class="selectgroup-button">HTML</span>-->
+<!--                                            </label>-->
+<!--                                            <label class="selectgroup-item">-->
+<!--                                                <input type="checkbox" name="categories" value="CSS" class="selectgroup-input"/>-->
+<!--                                                <span class="selectgroup-button">CSS</span>-->
+<!--                                            </label>-->
+<!--                                            <label class="selectgroup-item">-->
+<!--                                                <input type="checkbox" name="categories" value="PHP" class="selectgroup-input"/>-->
+<!--                                                <span class="selectgroup-button">PHP</span>-->
+<!--                                            </label>-->
+<!--                                            <label class="selectgroup-item">-->
+<!--                                                <input type="checkbox" name="categories" value="Java" class="selectgroup-input"/>-->
+<!--                                                <span class="selectgroup-button">Java</span>-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                    <div class="form-group">
+                                        <label>Publish</label><br/>
+                                        <div class="d-flex">
+                                            <div class="form-check">
+                                                <input class="form-check-input" value="true" type="radio" name="published" id="flexRadioDefault1"/>
+                                                <label class="form-check-label" for="flexRadioDefault1">Yes</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" value="false" type="radio" name="published" id="flexRadioDefault2" checked/>
+                                                <label class="form-check-label" for="flexRadioDefault2">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Product file input</label>
+                                        <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-success" type="submit">Submit</button>
+                            <button class="btn btn-danger">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

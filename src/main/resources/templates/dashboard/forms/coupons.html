@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	  th:replace="~{dashboard/basedb::layout(~{::content})}">
+
+<div class="container" th:fragment="content">
+	<div class="page-inner">
+		<div class="page-header">
+			<h3 class="fw-bold mb-3">Forms</h3>
+			<ul class="breadcrumbs mb-3">
+				<li class="nav-home"><a href="#"><i class="icon-home"></i></a></li>
+				<li class="separator"><i class="icon-arrow-right"></i></li>
+				<li class="nav-item"><a href="#">Forms</a></li>
+				<li class="separator"><i class="icon-arrow-right"></i></li>
+				<li class="nav-item"><a href="#">Basic Form</a></li>
+			</ul>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Form Coupons</div>
+					</div>
+					<div class="card-body">
+						<div class="row">
+							<div class="col-md-6 col-lg-6">
+								<div class="form-group">
+									<label for="code">Code</label>
+									<input type="text" class="form-control" id="code" placeholder="Enter code"/>
+								</div>
+								<div class="form-group">
+									<label for="discountValue">Discount Value</label>
+									<input type="text" class="form-control" id="discountValue" placeholder="Enter Discount Value"/>
+								</div>
+								<div class="form-group">
+									<label for="discountType">Discount Type</label>
+									<input type="text" class="form-control" id="discountType" placeholder="Enter Discount Type"/>
+								</div>
+								<div class="form-group">
+									<label for="couponDescription">Coupon Description</label>
+									<textarea class="form-control" id="couponDescription" rows="5"></textarea>
+								</div>
+							</div>
+							<div class="col-md-6 col-lg-6">
+								<div class="form-group">
+									<label for="timeUsed">Time Used</label>
+									<input type="number" class="form-control" id="timeUsed" placeholder="Enter Time Used"/>
+								</div>
+								<div class="form-group">
+									<label for="maxUsed">Code</label>
+									<input type="number" class="form-control" id="maxUsed" placeholder="Enter Max Used"/>
+								</div>
+								<div class="form-group">
+									<label for="couponStartDate">Coupon Start Date</label>
+									<input type="date" id="couponStartDate" name="date" class="form-control">
+								</div>
+								<div class="form-group">
+									<label for="couponEndDate">Coupon End Date</label>
+									<input type="date" name="date" id="couponEndDate" class="form-control">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card-action">
+						<button class="btn btn-success">Submit</button>
+						<button class="btn btn-danger">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	  th:replace="~{web/base::layout(~{::section})}">
+
+<section>
+	<div class="container mt-5 p-5">
+		<div class="row" style="margin-top: 50px">
+			<div class="col-md-5 p-5">
+				<img alt="" src="/web_stt/img/ecom.png" width="100%" height="400px">
+			</div>
+			<div class="col-md-7 p-2">
+				<div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+					<div class="card-header text-center">
+						<p class="fs-4 text-center">Register</p>
+						<th:block th:if="${session.successMsg}">
+							<p class="text-success fw-bold">[[${session.successMsg}]]</p>
+							<th:block ></th:block>
+						</th:block>
+						<th:block th:if="${session.errorMsg}">
+							<p class="text-danger fw-bold">[[${session.errorMsg}]]</p>
+							<th:block ></th:block>
+						</th:block>
+					</div>
+					<div class="card-body">
+						<form action="/web/saveUser" th:object="${user}" enctype="multipart/form-data" method="post">
+							<div class="row">
+								<div class="col">
+									<label class="form-label">First Name</label>
+									<input required th:field="*{firstName}" class="form-control" name="firstName" type="text">
+									<p th:each="error: ${#fields.errors('firstName')}" th:text="${error}">Validation error</p>
+								</div>
+								<div class="col">
+									<label class="form-label">Last Name</label>
+									<input required th:field="*{lastName}"  class="form-control" name="lastName" type="text">
+									<p th:each="error : ${#fields.errors('lastName')}" th:text="${error}">Validation error</p>
+								</div>
+							</div>
+							<div class="mb-3">
+								<label class="form-label">Email</label>
+								<input th:field="*{email}" required class="form-control" name="email" type="email">
+								<p th:each="error : ${#fields.errors('email')}" th:text="${error}">Validation error</p>
+							</div>
+<!--							<div class="row">-->
+<!--								<div class="col">-->
+<!--									<label class="form-label">Phone Number</label> <input required th:field="*{phoneNumber}" class="form-control" name="phoneNumber" type="text">-->
+<!--									<p th:each="error : ${#fields.errors('phoneNumber')}" th:text="${error}">Validation error</p>-->
+<!--								</div>-->
+<!--								<div class="col">-->
+<!--									<label class="form-label">Age</label> <input required th:field="age" class="form-control" name="age" type="number">-->
+<!--									<p th:each="error : ${#fields.errors('age')}" th:text="${error}">Validation error</p>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--							<div class="form-group" style="margin-top: 10px">-->
+<!--								<label>Gender</label><br/>-->
+<!--								<div class="d-flex">-->
+<!--									<div class="form-check" style="margin-right: 40px">-->
+<!--										<input th:field="gender" class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" value="Male"/>-->
+<!--										<label class="form-check-label" for="flexRadioDefault1">Male</label>-->
+<!--									</div>-->
+<!--									<div class="form-check" style="margin-right: 40px">-->
+<!--										<input th:field="gender" class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" value="Female" checked/>-->
+<!--										<label class="form-check-label" for="flexRadioDefault2">Female</label>-->
+<!--									</div>-->
+<!--									<div class="form-check">-->
+<!--										<input th:field="gender" class="form-check-input" type="radio" name="gender" id="flexRadioDefault3" value="?" checked/>-->
+<!--										<label class="form-check-label" for="flexRadioDefault3">?</label>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</div>-->
+							<div class="row">
+								<div class="col">
+									<label class="form-label">Password</label>
+									<input required th:field="*{password}" class="form-control" name="password" type="password">
+									<p th:each="error : ${#fields.errors('password')}" th:text="${error}">Validation error</p>
+
+								</div>
+								<div class="col">
+									<label class="form-label">Confirm Password</label>
+									<input required th:field="*{passwordConfirm}" class="form-control" name="cpassword" type="password">
+									<p th:each="error : ${#fields.errors('passwordConfirm')}" th:text="${error}">Validation error</p>
+								</div>
+							</div>
+<!--							<div class="mb-3">-->
+<!--								<label class="form-label">Profile Image</label> <input class="form-control" name="profileImg" type="file">-->
+<!--							</div>-->
+							<button style="margin-top: 30px" type="submit" class="btn bg-primary text-white col-md-12">Register</button>
+
+						</form>
+					</div>
+					<div class="card-footer text-center">Have an account ? <a href="/web/login" class="text-decoration-none">Login</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+</html>

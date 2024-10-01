@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{dashboard/basedb::layout(~{::content})}">
+
+<div class="container" th:fragment="content">
+    <div class="page-inner">
+        <div class="page-header">
+            <h3 class="fw-bold mb-3">Forms</h3>
+            <ul class="breadcrumbs mb-3">
+                <li class="nav-home"><a href="#"><i class="icon-home"></i></a></li>
+                <li class="separator"><i class="icon-arrow-right"></i></li>
+                <li class="nav-item"><a href="#">Forms</a></li>
+                <li class="separator"><i class="icon-arrow-right"></i></li>
+                <li class="nav-item"><a href="#">Basic Form</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <form action="/dashboard/saveUser" method="post" enctype="multipart/form-data">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Form User</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                    <div class="col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <label for="email">Email Address</label>
+                                            <input type="email" id="email" class="form-control" placeholder="Enter Email"/>
+                                            <!--<small id="emailHelp2" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="firstName">First Name</label>
+                                            <input name="firstName" type="text" class="form-control" id="firstName" placeholder="First Name"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lastName">Last Name</label>
+                                            <input name="lastName" type="text" class="form-control" id="lastName" placeholder="Last Name"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Gender</label><br/>
+                                            <div class="d-flex">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" value="Male"/>
+                                                    <label class="form-check-label" for="flexRadioDefault1">Male</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" value="Female" checked/>
+                                                    <label class="form-check-label" for="flexRadioDefault2">Female</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault3" value="?" checked/>
+                                                    <label class="form-check-label" for="flexRadioDefault3">?</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlFile1">Image Profile</label>
+                                            <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <label for="password">Password</label>
+                                            <input type="password" name="password" class="form-control" id="password" placeholder="Password"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="passwordConfirm">Password Confirm</label>
+                                            <input type="password" class="form-control" id="passwordConfirm" placeholder="Password Confirm"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phoneNumber">Phone Number</label>
+                                            <input type="text" name="phoneNumber" class="form-control" id="phoneNumber" placeholder="Phone Number" style="width: 50%"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="age">Age</label>
+                                            <input type="number" name="age" class="form-control" id="age" style="width: 20%"/>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-success" type="submit">Submit</button>
+                            <button class="btn btn-danger">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
